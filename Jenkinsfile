@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        // Specify Maven installation configured in Jenkins
-        MAVEN_HOME = tool name: 'Maven', type: 'maven'
-        PATH = "${env.MAVEN_HOME}\\bin;${env.PATH}"
-    }
+    MAVEN_HOME = tool name: 'Maven 3.9.5', type: 'maven'
+    PATH = "${env.MAVEN_HOME}\\bin;${env.PATH}"
+}
+
 
     stages {
         stage('Checkout SCM') {
@@ -68,3 +68,4 @@ pipeline {
         }
     }
 }
+
