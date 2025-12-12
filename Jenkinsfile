@@ -12,8 +12,11 @@ pipeline {
             steps {
                 script {
                     try {
-                        def mvnHome = tool name: 'Maven 3', type: 'maven' // Use exact name from Jenkins
-                        env.PATH = "${mvnHome}\\bin;${env.PATH}"         // Windows path
+                        // Use the exact Maven installation name
+                        def mvnHome = tool name: 'MAVEN_3', type: 'maven'
+                        env.PATH = "${mvnHome}\\bin;${env.PATH}"
+                        
+                        // Run Maven build on Windows
                         bat "mvn clean install"
                     } catch (Exception e) {
                         error "Build failed! Check your Maven installation or compilation errors."
