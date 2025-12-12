@@ -18,11 +18,12 @@ pipeline {
 }
 
 
-        stage('Build') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
+       stage('Build') {
+    steps {
+        bat 'mvn clean package'
+    }
+}
+
 
         stage('Archive Jar') {
             steps {
@@ -31,6 +32,7 @@ pipeline {
         }
     }
 }
+
 
 
 
