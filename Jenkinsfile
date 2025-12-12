@@ -9,7 +9,8 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/YOUR_USERNAME/maven_demo.git', branch: 'main'
+                git url: 'https://github.com/ibrahim-0095/maven-demo.git', branch: 'main'
+
             }
         }
 
@@ -26,4 +27,5 @@ pipeline {
         }
     }
 }
+
 
