@@ -8,11 +8,15 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps {
-                git url: 'https://github.com/ibrahim-0095/maven-demo.git', branch: 'main'
+    steps {
+        git(
+            url: 'https://github.com/ibrahim-0095/maven-demo.git',
+            branch: 'main',
+            credentialsId: 'github-pat'
+        )
+    }
+}
 
-            }
-        }
 
         stage('Build') {
             steps {
@@ -27,5 +31,6 @@ pipeline {
         }
     }
 }
+
 
 
